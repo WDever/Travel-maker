@@ -8,7 +8,7 @@ import styles from './SearchBar.scss';
 
 const cx = classNames.bind(styles);
 
-const Main = ({ onChange, value, onKeyPress, userName }) => {
+const Main = ({ onChange, value, onKeyPress, userName, onToggle, toggle }) => {
   return (
     <div className={cx('SearchBar-template')}>
       <div className={cx('logo-wrapper')}>
@@ -25,7 +25,7 @@ const Main = ({ onChange, value, onKeyPress, userName }) => {
           <Icon className={cx('Icon')} />
         </div>
       </div>
-      <div className={cx('user-area')}>
+      <div className={cx('user-area')} onClick={onToggle}>
         <div>
           {userName} 님 <FaChevronDown />
         </div>

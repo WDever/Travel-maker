@@ -1,27 +1,22 @@
 import React from 'react';
 import classNames from 'classnames/bind';
-import { MdNavigateBefore, MdNavigateNext } from 'react-icons/md';
 import styles from './LocationPic.scss';
+import LocationPicItem from '../LocationPicItem';
 
 const cx = classNames.bind(styles);
 
-const LocationPic = ({ locationTitle, contry, picSrc }) => {
-  return (
-    <div className={cx('location-pic-template')} style={{backgroundImage: `url(${picSrc})`}}>
-      <div className={cx('pic-changer')}>
-        <MdNavigateBefore size={100} />
-      </div>
-      <div className={cx('location-title')}>
-        {locationTitle}
-        <div className={cx('contry')}>
-          {contry}
-        </div>
-      </div>
-      <div className={cx('pic-changer')}>
-        <MdNavigateNext size={100} />
-      </div>
-    </div>
-  );
+const LocationPic = ({ locationList, goNext, goPrev }) => {
+  const picList = locationList.map((item, idx) => {
+    return (
+      <LocationPicItem
+        key={idx}
+        locationItem={item}
+        goNext={goNext}
+        goPrev={goPrev}
+      />
+    );
+  });
+  return <div className={cx('List')}>{picList}</div>;
 };
 
 export default LocationPic;

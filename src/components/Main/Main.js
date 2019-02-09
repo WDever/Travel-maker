@@ -2,7 +2,11 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import classNames from 'classnames/bind';
 import SearchBar from '../SearchBar';
+import SearchBarContainer from '../../container/SearchBarContainer';
 import LocationPic from '../LocationPic';
+import LocationPicContainer from '../../container/LocationPicContainer';
+import Category from '../Category';
+
 import styles from './Main.scss';
 
 const cx = classNames.bind(styles);
@@ -12,9 +16,9 @@ const Main = () => {
 
   return (
     <div className={cx('main-page')}>
-      <SearchBar userName="최민규" />
-      <LocationPic locationTitle="제주특별자치도" contry="Korea" picSrc={test} />
-      
+      <SearchBarContainer />
+      <LocationPicContainer />
+      <Category />
     </div>
   );
 };
