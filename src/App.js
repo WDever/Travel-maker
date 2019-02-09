@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Route, Link } from 'react-router-dom';
-import GlobalStyle from './components/Cards/GlobalStyles';
-import Card01 from './components/Cards/Card01';
-import Card02 from './components/Cards/Card02';
-import Test from './components/Test';
-import Testest from './components/Testest';
+import classNames from 'classnames/bind';
+import styles from './App.scss';
+import Main from './components/Main';
+
+const cx = classNames.bind(styles);
 
 const Container = styled.div`
   padding: 50px;
@@ -56,13 +56,15 @@ const TwoCards = styled(MultiCard)`
 class App extends React.Component {
   test = `https://images.unsplash.com/photo-1549571558-7ca00bbd1b40?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80`;
 
+  responseGoogle = response => {
+    console.log(response);
+  };
 
   render() {
     return (
-      <>
-        <Route exact path="/" component={Test} />
-        <Route exact path="/test" component={Testest} />
-      </>
+      <div className={cx('App')}>
+        <Route exact path="/" component={Main} />
+      </div>
     );
   }
 }
