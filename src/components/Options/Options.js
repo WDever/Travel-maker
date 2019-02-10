@@ -1,6 +1,6 @@
 import React from 'react'
 import classNames from 'classnames/bind';
-import syles from './Options.scss';
+import styles from './Options.scss';
 
 const cx = classNames.bind(styles);
 
@@ -18,6 +18,9 @@ const Options = () => {
       </div>
       <div className={cx('configs')}>
         서비스 소개
+      </div>
+      <div className={cx('logout')}>
+        로그아웃
       </div>
     </div>
   )
